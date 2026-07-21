@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Generator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 12px 25px;
+            cursor: pointer;
+        }
+
+        li {
+            text-align: left;
+            font-size: 22px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Today's Workout</h1>
+
+<button onclick="generateWorkout()">Pick 3 Exercises</button>
+
+<ul id="workout"></ul>
+
+
+<script>
+
+const exercises = [
+    "Push-ups",
+    "Pull-ups",
+    "Squats",
+    "Lunges",
+    "Deadlift",
+    "Bench Press",
+    "Overhead Press",
+    "Rows",
+    "Dips",
+    "Plank",
+    "Burpees",
+    "Bicep Curls",
+    "Tricep Extensions",
+    "Calf Raises"
+];
+
+
+function generateWorkout() {
+
+    // Copy and shuffle the list
+    let shuffled = [...exercises].sort(() => Math.random() - 0.5);
+
+    // Take first 3
+    let selected = shuffled.slice(0, 3);
+
+    // Display results
+    document.getElementById("workout").innerHTML =
+        selected.map(exercise => `<li>${exercise}</li>`).join("");
+}
+
+</script>
+
+</body>
+</html>
