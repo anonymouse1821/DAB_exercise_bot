@@ -36,7 +36,8 @@
 
 <ul id="workout"></ul>
 
-
+<h1>Then 1 hour of Play</h1>
+    
 <script>
 
 const exercises = [
@@ -57,8 +58,6 @@ const exercises = [
     "Box Challenge"
 ];
 
-<h1>Then 1 hour of Play</h1>
-
 function generateWorkout() {
 
     // Copy and shuffle the list
@@ -69,7 +68,7 @@ function generateWorkout() {
 
     // Display results
     document.getElementById("workout").innerHTML =
-        selected.map(exercise => `<li>${exercise}</li>`).join("");
+        selected.map(exercise => `<li><a href="${exercise}" target="_blank">${exercise}</a></li>`).join("");
 }
 
 </script>
